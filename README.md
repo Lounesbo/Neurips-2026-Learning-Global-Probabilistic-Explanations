@@ -4,7 +4,7 @@
 
 *40th Conference on Neural Information Processing Systems (NeurIPS 2026)*
 
-[**Paper (OpenReview)**](https://openreview.net/forum?id=OPENREVIEW_ID) · [Code](code/) · [Results](results/)
+[**Paper (OpenReview)**](https://openreview.net/forum?id=c2Ny586AOf) · [Code](code/) · [Results](results/)
 
 ---
 
@@ -134,8 +134,9 @@ SE at k = 5 takes between 4 and 41 minutes.
 @inproceedings{koriche2026learning,
   title     = {Learning Global Probabilistic Explanations},
   author    = {Koriche, Fr{\'e}d{\'e}ric and Bounia, Louenas},
-  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
-  year      = {2026}
+  booktitle = {The Fortieth Annual Conference on Neural Information Processing Systems},
+  year      = {2026},
+  url       = {https://openreview.net/forum?id=c2Ny586AOf}
 }
 ```
 
