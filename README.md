@@ -15,7 +15,7 @@ probabilistic explanation** is a small subset K of features such that two
 random inputs agreeing on K are likely to receive the same label. Its
 **global relevance error** is
 
-    err(K) = P_{x ~ D, z ~ D(· | z_K = x_K)} [ f(x) ≠ f(z) ]
+   $$ err(K) = P_{x ~ D, z ~ D(· | z_K = x_K)} [ f(x) ≠ f(z) ] $$
 
 and the goal is to find, under a size limit |K| ≤ k, an explanation of
 minimal error.
@@ -23,7 +23,7 @@ minimal error.
 For product distributions with full support over discrete feature spaces, the
 paper shows that this error is entirely determined by the Fourier spectrum of f:
 
-    err(K) = (1 − W(f_K)) / 2
+  $$ err(K) = (1 − W(f_K)) / 2 $$
 
 where W(f_K) is the spectral energy of f on the coordinates supported on K.
 Building on this identity, the **Spectral Explainer (SE)** combines:
