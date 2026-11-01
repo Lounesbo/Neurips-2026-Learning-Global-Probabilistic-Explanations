@@ -85,3 +85,7 @@ Results go to `exps/<series>/`, one CSV per shard, rewritten after every run;
 logs go to `exps/logs/`. Rerunning with the tag of an interrupted campaign skips
 its finished runs. Run from a local folder: a synchronized folder (Google Drive,
 OneDrive) may invalidate open files during a long campaign.
+
+Each row carries the parameters (theta, b, n, kappa, kappa_effective, capped),
+the measured throughput and the cap, the explanation, err, opt and the gap when
+opt is known, the number of queries, and the IKM statistics.
