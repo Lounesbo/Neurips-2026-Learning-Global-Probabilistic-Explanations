@@ -10,36 +10,36 @@
 
 ## Overview
 
-Given a black-box classifier f and a distribution D over the inputs, a **global
-probabilistic explanation** is a small subset K of features such that two
-random inputs agreeing on K are likely to receive the same label. Its
+Given a black-box classifier $f$ and a distribution $D$ over the inputs, a **global
+probabilistic explanation** is a small subset $K$ of features such that two
+random inputs agreeing on $K$ are likely to receive the same label. Its
 **global relevance error** is
 
    $$ err(K) = P_{x ~ D, z ~ D(· | z_K = x_K)} [ f(x) ≠ f(z) ] $$
 
-and the goal is to find, under a size limit |K| ≤ k, an explanation of
+and the goal is to find, under a size limit $|K| \leq k$, an explanation of
 minimal error.
 
 For product distributions with full support over discrete feature spaces, the
-paper shows that this error is entirely determined by the Fourier spectrum of f:
+paper shows that this error is entirely determined by the Fourier spectrum of $f$:
 
   $$ err(K) = (1 − W(f_K)) / 2 $$
 
-where W(f_K) is the spectral energy of f on the coordinates supported on K.
+where $W(f_K)$ is the spectral energy of $f$ on the coordinates supported on $K$.
 Building on this identity, the **Spectral Explainer (SE)** combines:
 
 1. **Spectral recovery**: an *Integer Kushilevitz–Mansour* (IKM) algorithm
-   that finds the significant Fourier coefficients of f over general discrete
+   that finds the significant Fourier coefficients of $f$ over general discrete
    domains, using membership queries and median-of-means estimates;
 2. **Feature pruning**: keeping only the features with a large restricted
    influence;
 3. **Subset selection**: an exhaustive search for the subset of maximal energy
    among the remaining features.
 
-With probability at least 1 − δ, SE returns an explanation whose error is
-within ε of the optimum. It is **fixed-parameter tractable** in k, the maximum
-feature cardinality c and 1/ε, with a running time polynomial in d,
-(ck/ε)^k and ln(1/δ).
+With probability at least $1 − \delta$, SE returns an explanation whose error is
+within $\epsilon$ of the optimum. It is **fixed-parameter tractable** in $k$, the maximum
+feature cardinality $c$ and $\frac{1}{\epsilon}$, with a running time polynomial in $d$,
+$(ck/ε)^k$ and $ln(1/δ)$.
 
 Experiments on synthetic targets and nine OpenML datasets confirm the
 guarantee and compare SE with a greedy forward-selection baseline (GE). SE
@@ -85,7 +85,7 @@ from explainer import SpectralExplainer
 from oracle import MembershipOracle
 from parameters import SEParameters
 
-d, k = 8, 3
+$d, k = 8, 3$
 D = ProductDistribution.uniform(d, 2)                  # uniform product distribution on {0,1}^8
 f = Parity([1, 4, 6])                                  # black box with labels in {-1, +1}
 params = SEParameters(epsilon=0.9, delta=0.1, k=k, d=d, c=2, kappa=0.02)
